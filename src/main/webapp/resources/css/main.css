@@ -1,0 +1,16 @@
+.contain{
+    min-height: 80%;
+    max-width: 80%;
+    margin: 0 auto;
+}
+.pt-10{
+    padding-top: 10px;
+}
+.mt-10{
+    margin-top: 10px;
+}
+.text-error{
+    color: #ff0000;
+    font-style: italic;
+    font-weight: bold;
+}
