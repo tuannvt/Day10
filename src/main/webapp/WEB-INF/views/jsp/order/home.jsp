@@ -12,7 +12,7 @@
     .nav{background-color:black;}
     .nav .nav-item a{color:white;}
     .container {
-        width: 1500px;
+        width: 900px;
         margin: 0 auto;
     }
 </style>
@@ -22,10 +22,13 @@
   <div class="container">
     <ul class="nav" style="margin-top:10px"; >
         <li class="nav-item">
-          <a class="nav-link active" href="#">Spring Web MVC demo</a>
+          <a class="nav-link active" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="newBook">Add book</a>
+          <a class="nav-link" href="cart">My Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="continue">My Order</a>
         </li>
     </ul>
   </div>
@@ -47,25 +50,18 @@
           <tr>
             <th scope="col">ID</th>
             <th>Name</th>
-            <th>Author</th>
-            <th>ISBN</th>
+            <th>Description</th>
             <th>Price</th>
-            <th>Publish Date</th>
-            <th>Category</th>
           </tr>
         </thead>
         <tbody>
-        <c:forEach items="${bookList}" var="book">
+        <c:forEach items="${productList}" var="product">
           <tr>
-            <th scope="row" >${book.id}</th>
-            <th>${book.name}</th>
-            <th>${book.author}</th>
-            <th>${book.bookDetails.isbn}</th>
-            <th>${book.bookDetails.price}</th>
-            <th>${book.bookDetails.publishDate}</th>
-            <th>${book.category.name}</th>
-            <th><button type="button" class="btn btn-dark" onclick="location.href='edit/${book.id}'">Edit</button>
-            <button type="button" class="btn btn-dark" onclick="location.href='delete/${book.id}'">Delete</button></th>
+            <th scope="row" >${product.id}</th>
+            <th>${product.name}</th>
+            <th>${product.description}</th>
+            <th>${product.price}</th>
+            <th><button type="button" class="btn btn-dark" onclick="location.href='add/${product.id}'"><c:out value="${msg}"/></button>
           </tr>
           </c:forEach>
         </tbody>
